@@ -1,0 +1,41 @@
+{
+  "name": "logingusers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "8.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "prop-types": "^15.7.2",
+    "ra-data-json-server": "^3.7.2",
+    "react": "^16.13.1",
+    "react-admin": "^3.7.2",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "nodemon --inspect server/app.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaKisel93/logingUsers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DimaKisel93/logingUsers/issues"
+  },
+  "homepage": "https://github.com/DimaKisel93/logingUsers#readme"
+}
