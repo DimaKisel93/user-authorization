@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export const register = newUser => {
   return axios
     .post('users/register', {
@@ -21,6 +22,24 @@ export const login = user => {
     })
     .then(response => {
       localStorage.setItem('usertoken', response.data)
+      return response.data
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
+
+export const profile = user => {
+  return axios
+    .get('users/profile', {
+      name: user.name,
+      email: user.email,
+      last_login_date: user.last_login_date,
+      registration_date: user.registration_date,
+      status: user.status
+    })
+    .then(response => {
+      console.log(response.data)
       return response.data
     })
     .catch(err => {

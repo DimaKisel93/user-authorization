@@ -12,6 +12,7 @@ process.env.SECRET_KEY = 'secret'
 users.post('/register', (req, res) => {
   const today = new Date()
   const userData = {
+    id: req.body.id,
     name: req.body.name,
     email: req.body.email,
     last_login_date: req.body.last_login_date,
@@ -25,7 +26,6 @@ users.post('/register', (req, res) => {
       email: req.body.email
     }
   })
-    //TODO bcrypt
     .then(user => {
       if (!user) {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -73,11 +73,12 @@ users.post('/login', (req, res) => {
 users.get('/profile', (req, res) => {
   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
-  User.findOne({
+  User.findAll({
     where: {
       id: decoded.id
     }
   })
+  User.create(userData)
     .then(user => {
       if (user) {
         res.json(user)

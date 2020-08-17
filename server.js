@@ -4,27 +4,6 @@ var bodyParser = require('body-parser')
 var app = express()
 var port = process.env.PORT || 5000
 
-// app.get("/test", function (req, res) {
-//   var mysql = require("mysql");
-
-//   var con = mysql.createConnection({
-//     host: "127.0.0.1",
-//     user: "root",
-//     password: "1234",
-//     database: "users",
-//     port: 3307
-//   });
-
-//   console.log("Connection Object Created");
-//   con.connect(function (error1) {
-//     if (error1) {
-//       console.log(error1);
-//       return;
-//     } else {
-//       console.log("Connected1");
-//     }
-//   });
-// });
 
 app.use(bodyParser.json())
 app.use(cors())
